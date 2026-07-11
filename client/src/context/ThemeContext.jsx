@@ -1,37 +1,28 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-const ThemeContext = createContext();
 
-export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "light"
-  );
+export const ThemeContext = createContext();
 
-  useEffect(() => {
-    document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(theme);
 
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+export function ThemeProvider({children}){
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) =>
-      prevTheme === "light" ? "dark" : "light"
-    );
-  };
+  const [darkMode,setDarkMode] = useState(false);
+
 
   return (
-    <ThemeContext.Provider
-      value={{
-        theme,
-        toggleTheme,
-      }}
+    <ThemeContext.Provider 
+      value={{darkMode,setDarkMode}}
     >
       {children}
     </ThemeContext.Provider>
   );
+
 }
 
-export function useTheme() {
+
+// custom hook
+export function useTheme(){
+
   return useContext(ThemeContext);
+
 }

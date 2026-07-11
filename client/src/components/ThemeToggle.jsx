@@ -1,22 +1,21 @@
-import { FaMoon, FaSun } from "react-icons/fa";
-import { useTheme } from "../context/ThemeContext";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
-function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
 
-  return (
-    <button
-      onClick={toggleTheme}
-      className="p-2 rounded-lg border border-gray-300 hover:bg-gray-100 transition"
-      aria-label="Toggle Theme"
-    >
-      {theme === "light" ? (
-        <FaMoon className="text-gray-700" />
-      ) : (
-        <FaSun className="text-yellow-500" />
-      )}
-    </button>
-  );
+function ThemeToggle(){
+
+const {darkMode,setDarkMode}=useContext(ThemeContext);
+
+
+return(
+<button onClick={()=>setDarkMode(!darkMode)}>
+{
+darkMode ? "☀️ Light" : "🌙 Dark"
 }
+</button>
+)
+
+}
+
 
 export default ThemeToggle;

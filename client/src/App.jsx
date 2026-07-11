@@ -18,6 +18,7 @@ import Achievements from "./pages/Achievements";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
+
 function App() {
   return (
     <Routes>
@@ -38,6 +39,7 @@ function App() {
       <Route path="/planner" element={<Planner />} />
       <Route path="/achievements" element={<Achievements />} />
       <Route path="/admin" element={<Admin />} />
+
 
       <Route path="*" element={<NotFound />} />
     </Routes>

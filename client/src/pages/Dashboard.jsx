@@ -20,11 +20,6 @@ function Dashboard() {
         />
 
         <DashboardStats />
-
-        <Progress />
-
-        <QuickActions />
-
         <RecentActivity />
 
       </div>
