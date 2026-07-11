@@ -11,7 +11,7 @@ import Companies from "./pages/Companies";
 import Bookmarks from "./pages/Bookmarks";
 import Notes from "./pages/Notes";
 import MockTest from "./pages/MockTest";
-import Progress from "./pages/Progress";
+import Progress from "./components/Progress";
 import Resources from "./pages/Resources";
 import Planner from "./pages/Planner";
 import Achievements from "./pages/Achievements";
